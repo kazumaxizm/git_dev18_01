@@ -1,0 +1,516 @@
+/* ここから下に記載していく */
+@charset "utf-8";
+
+/*  htmlでfontサイズ書いてるけど、bodyにも書いている。
+    この場合はどうなるんだろう？ 最終表示に62.5%かけてるっぽい */
+html{
+    font-size: 62.5%; 
+}
+
+/*  課題の指定が幅1200pxなので、bodyで設定 */
+body{
+    width: 1200px;
+    /*  margin のrightとleftをautoにすると、マージンが均等に振り分けられる
+       https://itokoba.com/archives/976  */
+    margin-right: auto;
+    margin-left : auto;
+    color: #333333;
+    font-family:"Open Sans",'ヒラギノ角ゴ ProN W3', Hiragino Kaku Gothic ProN, "メイリオ", Meiryo, sans-serif;
+    font-size: 1.6rem;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.text-center{
+    text-align: center;
+}
+
+/*  リンクの下線を消しておく */
+a {text-decoration: none}
+
+/* このラッパーって何の為に用意してたんだっけ・・？ */
+.wrapper{
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* -----------------------
+    header
+ * ----------------------  */
+
+ .header{
+    background-color: #fff;
+}
+
+/* 気持ちwidthを狭めてる（max-widthとwidhtの違いって何だっけ？） */
+.header-wrapper{
+    max-width: 1140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 110px;
+}
+
+.header-img{
+    max-width: 20%;
+    height: auto;
+}
+
+.nav-list{
+    display: flex;
+}
+
+.nav-item{
+    margin: 0 0 0 48px;
+}
+
+/* -----------------------
+    main-img（トップ画像の部分）
+ * ----------------------  */
+
+/* ちょっと画像を暗くしてみた。
+    文字位置の指定方法とか、クラスのまとめ方とか、
+    もっといい方法あるんだろうなぁ・・ */
+
+ .main-img{
+     /* padding設定しようと思ったら、背景色の黒色が出てきた。
+        なんかおしゃれなので残しておこう。 */
+    padding: 30px 0;;
+    background: #000;
+    position: relative;
+ }
+
+ .main-img-filter{
+    display: block;
+    opacity: .7;
+    position: relative;
+ }
+
+.site-title{
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate3d(-50%,-52%,0);
+    color: #fff;
+    font-size: 3.8rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.site-subtitle{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate3d(-50%,-40%,0);
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+/* -----------------------
+    about
+ * ----------------------  */
+
+ .title-04 {
+    position: relative;
+    border-bottom: 2px solid #000;
+    background: #fff;
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px 0 13px;
+    margin: 0;
+}
+    /* 下三角 */ 
+    .title-04:before{
+        content: "";
+        position: absolute;
+        bottom: -44px;
+        left: 48%;
+        margin-left: 2px;
+        border: 22px solid transparent;
+        border-top: 22px solid #fff;
+        z-index: 2;
+    }
+    .title-04:after {
+        position: absolute;
+        border: 24px solid transparent;
+        border-top-color: #000;
+        border-bottom-width: 0;
+        bottom: -25px;
+        content: "";
+        left: 48%;
+        z-index: 1;
+    }
+
+.about{
+    padding: 20px 0;
+}
+
+.about_wrapper{
+    width: 560px;
+    margin: auto;
+}
+
+.about_title{
+    margin: 0 0 20px;
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.about_subtitle{
+    margin: 50px 0 20px;
+    font-size: 2.0rem;
+    font-weight: bold;
+}
+.about_text{
+    margin: 0 0 40px;
+    line-height: 2;
+    text-align: justify;
+    text-align: inter-deograph;
+}
+
+.content_center {
+    display: flex;
+    -webkit-flex-wrap: nowrap;        /* Safari etc. */
+    -ms-flex-wrap    : nowrap;        /* IE10        */
+    flex-wrap        : nowrap;
+    overflow: hidden;
+    width: 1200px; /*postのwidth合計と同じにする必要あり*/
+    margin: 0px auto;
+}
+
+.post {  
+    float: left;
+    width: 400px;
+}
+
+/*floatを使用した場合、これがないと親divからはみ出る*/
+.post_clear {  
+    clear: both;
+}
+
+/* -----------------------
+    course
+ * ----------------------  */
+ .course{
+    padding: 20px 0;
+ }
+
+ .course_wrapper{
+    width: 560px;
+    margin: auto;
+}
+
+.course_title{
+    margin: 0 0 20px;
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+.course_text{
+    margin: 0 0 40px;
+    line-height: 2;
+    text-align: justify;
+    text-align: inter-deograph;
+}
+ .contents {
+    width: 1200px; /*postのwidth合計と同じにする必要あり*/
+    margin: 0px auto;
+    /* overflow: hidden; */
+	height: 337px;
+	overflow: hidden;
+}
+.left {
+    float: left;
+	height: 337px;
+	width: 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.right {
+	float: right;
+	width: 50%;
+	height: 337px;
+}
+.text {
+	background-color: #f8f8f8;
+}
+.left h4 {
+    padding-left: 60px;
+    margin: 80px 20px 0 20px;
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+}
+.left p {
+    padding-left: 60px;
+	margin: 20px 40px 0 20px;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    line-height: 2;
+    text-align: justify;
+    text-align: inter-deograph;
+}
+.right h4 {
+    padding-left: 20px;
+    margin: 80px 120px 0 20px;
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+}
+.right p {
+    padding-left: 20px;
+	margin: 20px 120px 0 20px;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    line-height: 2;
+    text-align: justify;
+    text-align: inter-deograph;
+}
+
+/* -----------------------
+    news
+ * ----------------------  */
+
+.news{
+    padding: 20px 0;
+}
+.news_wrapper{
+    width: 560px;
+    margin: auto;
+}
+.news_list{
+    display: flex;
+    margin: 0 0 64px;
+}
+
+.news_item{
+    width: 33.333%;
+}
+
+.news_title{
+    margin: 0 0 64px;
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.news_eyecatch{
+    padding: 0 16px;
+    margin: 0 0 24px; 
+} 
+
+.news_contetns{
+    padding: 0 16px;
+}
+
+.news_heading{
+    margin: 0 0 16px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* 直接サイズを指定していて、微妙な気がする */
+.news_img{
+    max-width: 100%;
+    max-height: auto;
+    width: 347.98px;
+    height: auto;
+}
+
+.news_text{
+    line-height: 2;
+    text-align: justify;
+    text-align: inter-deograph;
+}
+
+ .btn{
+     display: block;
+     width: 214px;
+     margin: auto;
+     padding: 21px 0;
+     background-color:  #333333;
+     color:  #fff;
+     font-size: 1.8rem;
+     text-align: center;
+ }
+
+
+/* -----------------------
+    access
+ * ----------------------  */
+ 
+ 
+ .access{
+    padding: 20px 0;
+ }
+
+ .access_wrapper{
+    width: 560px;
+    margin: auto;
+}
+
+.access_title{
+    margin: 0 0 20px;
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.access_text{
+    line-height: 2;
+    text-align: justify;
+    text-align: inter-deograph;
+}
+
+ .access-wrapper2{
+    width: 600px;
+    margin: auto;
+}
+
+.access-inner{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 40px;
+}
+
+.access-title{
+    width: 152px;
+    margin: 40px 20px 0 0;
+    /* padding: 8px 0 0 0 ; */
+    font-weight: bold;
+    text-align: right;
+}
+.access-item{
+    width: 388px;
+    margin: 40px 20px 0 0;
+    /* margin: 0 0 32px; */
+}
+
+ /* -----------------------
+    contact
+ * ----------------------  */
+ .contact_title{
+     margin: 0 0 64px;
+     font-size: 2.4rem;
+     font-weight: bold;
+ }
+
+ .form-wrapper{
+    width: 560px;
+    margin: auto;
+}
+
+.form-wrapper-2{
+    width: 600px;
+    margin: auto;
+    padding : 40px ;
+    background-color: #f8f8f8;
+}
+
+
+.form-inner{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 40px;
+}
+
+.form-title{
+    width: 152px;
+    margin: 0 20px 0 0;
+    padding: 8px 0 0 0 ;
+    font-weight: bold;
+    text-align: right;
+}
+
+.form-title.check-radio{
+    padding: 0;
+}
+
+.form-item{
+    width: 388px;
+    margin: 0 0 32px;
+}
+
+.form-parts{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-sizing: border-box;
+    width: 100%;
+    padding:8px;
+    border: solid 1px #c9c9c9;
+    font-size: 1.6em;
+}
+
+ .contact_text{
+    margin: 0 0 64px;
+    line-height: 2;
+    text-align: justify;
+    text-align: inter-deograph;
+}
+
+.contact{
+   padding: 20px 0 64px;
+}
+
+.form-label{
+    margin: 0 16px 0 0;
+    font-size: 1.4rem;
+}
+
+input[type*="radio"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    margin: 0 10px 0 0;
+    border: solid 1px #a0a0a0;
+    border-radius: 50%;
+    vertical-align: -2px;
+}
+
+input[type*="radio"]:checked{
+    background-color: #a0a0a0;
+}
+
+.btn-submit{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+}
+
+/* -----------------------
+    footer
+ * ----------------------  */
+
+ .footer{
+     padding: 24px 0;
+     background-color: #707070;
+ }
+
+ .footer .wrapper{
+     position: relative;
+ }
+
+ .btn-pagetop{
+     position: absolute;
+     top: -78px;
+     right: 0; 
+     display: block;
+     width: 44px;
+     height: 44px;
+     border-radius: 50%;
+     background-color: #707070;
+ }
+
+ .icon-up{
+     display: block;
+     padding: 10px 0;
+     color: #fff;
+     font-size: 2.4rem;
+ }
+
+ .copyrights{
+     color: #fff;
+ }
