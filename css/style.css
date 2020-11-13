@@ -29,7 +29,10 @@ img{
 }
 
 /*  リンクの下線を消しておく */
-a {text-decoration: none}
+a {
+    color: rgb(0, 0, 0);
+    text-decoration:none;
+}
 
 /* このラッパーって何の為に用意してたんだっけ・・？ */
 .wrapper{
